@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-color-mode="dark" data-dark-theme="dark">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --Layout-pane-width: 220px;
+        --Layout-content-width: 100%;
+        --Layout-template-columns: 1fr var(--Layout-pane-width);
+        --Layout-template-areas: "content pane";
+        --Layout-column-gap: 16px;
+        --Layout-row-gap: 16px;
+        --Layout-outer-spacing-x: 0px;
+        --Layout-outer-spacing-y: 0px;
+        --Layout-inner-spacing-min: 0px;
+        --Layout-inner-spacing-max: 0px;
+        --actionListContent-paddingBlock: var(
+          --control-medium-paddingBlock,
+          0.375rem
+        );
+        --duration-fast: 80ms;
+        --easing-easeInOut: cubic-bezier(0.65, 0, 0.35, 1);
+      }
+      html {
+        font-size: 16px;
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      [data-color-mode] {
+        color: var(--fgColor-default, var(--color-fg-default));
+        background-color: var(--bgColor-default, var(--color-canvas-default));
+      }
+      [data-color-mode="dark"][data-dark-theme="dark"],
+      [data-color-mode="dark"][data-dark-theme="dark"]::selection {
+        --color-canvas-default: #0d1117;
+        --color-canvas-subtle: #161b22;
+        --color-border-default: #30363d;
+        --color-border-muted: #21262d;
+        --color-fg-default: #e6edf3;
+        --color-fg-muted: #7d8590;
+        --color-btn-hover-border: #8b949e;
+        --color-btn-border: rgba(240, 246, 252, 0.1);
+      }
+      .clearfix::before {
+        display: table;
+        content: "";
+      }
+      .clearfix::after {
+        display: table;
+        clear: both;
+        content: "";
+      }
+      .container-xl {
+        max-width: 1280px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .Layout-main .Layout-main-centered-lg > .container-xl,
+      .Layout-main .Layout-main-centered-md > .container-xl,
+      .Layout-main .Layout-main-centered-xl > .container-xl {
+        margin-left: 0;
+      }
+      .px-3 {
+        padding-right: var(--base-size-16, 16px) !important;
+        padding-left: var(--base-size-16, 16px) !important;
+      }
+      .px-md-4 {
+        padding-right: var(--base-size-24, 24px) !important;
+        padding-left: var(--base-size-24, 24px) !important;
+      }
+      .px-lg-5 {
+        padding-right: var(--base-size-32, 32px) !important;
+        padding-left: var(--base-size-32, 32px) !important;
+      }
+      .mt-4 {
+        margin-top: var(--base-size-24, 24px) !important;
+      }
+      .Box {
+        background-color: var(--bgColor-default, var(--color-canvas-default));
+        border-color: var(--borderColor-default, var(--color-border-default));
+        border-radius: var(--borderRadius-medium, 0.375rem);
+        border-style: solid;
+        border-width: var(--borderWidth-thin, max(1px, 0.0625rem));
+      }
+      .Box--spacious .Box-row {
+        padding: var(--stack-padding-spacious, 1.5rem);
+      }
+      .d-block {
+        display: block !important;
+      }
+      .Box-row {
+        border-top: var(--borderWidth-thin, max(1px, 0.0625rem)) solid
+          var(--borderColor-muted, var(--color-border-muted));
+        list-style-type: none;
+        margin-top: calc(var(--borderWidth-thin, max(1px, 0.0625rem)) * -1);
+        padding: var(--stack-padding-normal, 1rem);
+      }
+    </style>
+
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="./css/primer.css"
+    />
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="./css/global.css"
+    />
+
+    <title>New Repo Help</title>
+    <link rel="mask-icon" href="./assets/git.svg" color="#000000" />
+    <link
+      rel="alternate icon"
+      class="js-site-favicon"
+      type="image/png"
+      href="./assets/git.svg"
+    />
+    <link
+      rel="icon"
+      class="js-site-favicon"
+      type="image/svg+xml"
+      href="./assets/git.svg"
+    />
+    <meta name="theme-color" content="#1e2327" />
+    <meta name="color-scheme" content="dark light" />
+  </head>
+
+  <body>
+    <div class="clearfix container-xl px-3 px-md-4 px-lg-5 mt-4">
+      <git-clone-help class="Box Box--spacious d-block" data-catalyst="">
+        <div>
+          <!-- Ensure box rows behave properly -->
+          <div class="Box-row">
+            <h3>Create a new repository on the command line</h3>
+
+            <div class="copyable-terminal">
+              <div class="copyable-terminal-button">
+                <clipboard-copy
+                  for="empty-setup-new-repo-echo"
+                  aria-label="Copy to clipboard"
+                  class="btn btn-sm zeroclipboard-button"
+                  tabindex="0"
+                  role="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    data-view-component="true"
+                    class="octicon octicon-copy"
+                  >
+                    <path
+                      d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+                    ></path>
+                    <path
+                      d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+                    ></path>
+                  </svg>
+                </clipboard-copy>
+              </div>
+              <pre
+                id="empty-setup-new-repo-echo"
+                class="copyable-terminal-content f5"
+              ><span class="user-select-contain">echo "# test" &gt;&gt; README.md</span>
+<span class="user-select-contain">git init</span>
+<span class="user-select-contain">git add README.md</span>
+<span class="user-select-contain">git commit -m "first commit"</span>
+<span class="user-select-contain">git branch -M main</span>
+<span class="user-select-contain">git remote add origin <span data-targets="git-clone-help.helpTexts">https://github.com/npgy/test.git</span></span>
+<span class="user-select-contain mb-0">git push -u origin main</span></pre>
+            </div>
+          </div>
+
+          <div class="Box-row">
+            <h3>…or push an existing repository from the command line</h3>
+
+            <div class="copyable-terminal">
+              <div class="copyable-terminal-button">
+                <clipboard-copy
+                  for="empty-setup-push-repo-echo"
+                  aria-label="Copy to clipboard"
+                  class="btn btn-sm zeroclipboard-button"
+                  tabindex="0"
+                  role="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    data-view-component="true"
+                    class="octicon octicon-copy"
+                  >
+                    <path
+                      d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+                    ></path>
+                    <path
+                      d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+                    ></path>
+                  </svg>
+                </clipboard-copy>
+              </div>
+              <pre
+                id="empty-setup-push-repo-echo"
+                class="copyable-terminal-content f5"
+              ><span class="user-select-contain">git remote add origin <span data-targets="git-clone-help.helpTexts">https://github.com/npgy/test.git</span></span>
+<span class="user-select-contain">git branch -M main</span>
+<span class="user-select-contain">git push -u origin main</span></pre>
+            </div>
+          </div>
+        </div>
+      </git-clone-help>
+    </div>
+  </body>
+</html>
