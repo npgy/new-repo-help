@@ -445,19 +445,6 @@
     --color-text-white: var(--color-scale-white);
   }
 }
-@media (max-width: 543px) {
-  
-  [data-color-mode="dark"][data-dark-theme*="dark"] {
-    --color-fg-default: var(--color-scale-gray-0);
-    --color-canvas-default: var(--color-scale-gray-8);
-  }
-}
-@media (max-width: 543px) and (prefers-color-scheme: dark) {
-  [data-color-mode="auto"][data-dark-theme*="dark"] {
-    --color-fg-default: var(--color-scale-gray-0);
-    --color-canvas-default: var(--color-scale-gray-8);
-  }
-}
 @media (max-width: 767px) {
   @keyframes dropdown-menu-animation {
     0% {

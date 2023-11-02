@@ -132,6 +132,37 @@
     <meta name="color-scheme" content="dark light" />
   </head>
 
+  <script>
+    function copyFirstCodeBlock() {
+      const firstCodeBlock = document.getElementById(
+        "empty-setup-new-repo-echo"
+      );
+      let copiedText = "";
+
+      firstCodeBlock.childNodes.forEach((element) => {
+        if (element.textContent != false) {
+          copiedText += element.textContent + "\n";
+        }
+      });
+
+      navigator.clipboard.writeText(copiedText);
+    }
+
+    function copySecondCodeBlock() {
+      const firstCodeBlock = document.getElementById(
+        "empty-setup-push-repo-echo"
+      );
+      let copiedText = "";
+
+      firstCodeBlock.childNodes.forEach((element) => {
+        if (element.textContent != false) {
+          copiedText += element.textContent + "\n";
+        }
+      });
+
+      navigator.clipboard.writeText(copiedText);
+    }
+  </script>
   <body>
     <div class="clearfix container-xl px-3 px-md-4 px-lg-5 mt-4">
       <git-clone-help class="Box Box--spacious d-block" data-catalyst="">
@@ -148,6 +179,7 @@
                   class="btn btn-sm zeroclipboard-button"
                   tabindex="0"
                   role="button"
+                  onclick="copyFirstCodeBlock()"
                 >
                   <svg
                     aria-hidden="true"
@@ -191,6 +223,7 @@
                   class="btn btn-sm zeroclipboard-button"
                   tabindex="0"
                   role="button"
+                  onclick="copySecondCodeBlock()"
                 >
                   <svg
                     aria-hidden="true"
