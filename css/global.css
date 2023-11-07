@@ -28,10 +28,10 @@
  * Copyright (c) 2012 - 2017 GitHub, Inc.
  * Licensed under MIT (https://github.com/primer/github-syntax-theme-generator/blob/master/LICENSE)
  */
-.user-select-contain {
+/* .user-select-contain {
   -webkit-user-select: contain;
   user-select: contain;
-}
+} */
 
 [data-catalyst] {
   display: block;
@@ -130,14 +130,6 @@
   filter: invert(50%);
 }
 
-[data-color-mode="dark"][data-dark-theme*="dark"] ::selection {
-  background-color: var(--bgColor-accent-muted, var(--color-accent-muted));
-}
-@media (prefers-color-scheme: dark) {
-  [data-color-mode="auto"][data-dark-theme*="dark"] ::selection {
-    background-color: var(--bgColor-accent-muted, var(--color-accent-muted));
-  }
-}
 @font-face {
   font-family: "Noto Sans";
   src: local(sans-serif);
